@@ -46,7 +46,7 @@ public class Discovery extends AppCompatActivity {
             super.onCreate(savedInstanceState);
 
             database = FirebaseDatabase.getInstance();
-            likeRef = database.getReference().child("likes");
+
             currentUser = FirebaseAuth.getInstance().getCurrentUser() ;
             setContentView(R.layout.activity_feeds);
 
@@ -130,7 +130,7 @@ public class Discovery extends AppCompatActivity {
             @Override
             public void onViewRecycled(PostViewHolder holder) {
                 super.onViewRecycled(holder);
-//                FirebaseUtil.getLikesRef().child(holder.mPostKey).removeEventListener(holder.mLikeListener);
+//
             }
         };
     }
@@ -140,8 +140,7 @@ public class Discovery extends AppCompatActivity {
     private void setupPost(final PostViewHolder postViewHolder, final Post post, final int position, final String inPostKey) {
         postViewHolder.setPhoto(post.getThumb_url());
         postViewHolder.setText(post.getText());
-        postViewHolder.setTimestamp(DateUtils.getRelativeTimeSpanString(
-                (long) post.getTimestamp()).toString());
+        postViewHolder.setTimestamp(DateUtils.getRelativeTimeSpanString((long) post.getTimestamp()).toString());
         final String postKey;
         if (mAdapter instanceof FirebaseRecyclerAdapter) {
             postKey = ((FirebaseRecyclerAdapter) mAdapter).getRef(position).getKey();
@@ -150,34 +149,11 @@ public class Discovery extends AppCompatActivity {
         }
 
 
-        ValueEventListener likeListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                postViewHolder.setNumLikes(dataSnapshot.getChildrenCount());
-                if (dataSnapshot.hasChild(currentUser.getUid())) {
-                    postViewHolder.setLikeStatus(PostViewHolder.LikeStatus.LIKED, Discovery.this);
-                } else {
-                    postViewHolder.setLikeStatus(PostViewHolder.LikeStatus.NOT_LIKED, Discovery.this);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-       likeRef.child(postKey).addValueEventListener(likeListener);
-        postViewHolder.mLikeListener = likeListener;
-
-        postViewHolder.setPostClickListener(new PostViewHolder.PostClickListener() {
 
 
-            @Override
-            public void toggleLike() {
-                Log.d(TAG, "Like position: " + position);
-                mListener.onPostLike(postKey);
-            }
-        });
+
+
+
     }
 
     @Override

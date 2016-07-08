@@ -209,7 +209,7 @@ public class NewPost extends AppCompatActivity implements  EasyPermissions.Permi
         if (requestCode == TC_PICK_IMAGE) {
             if (resultCode == RESULT_OK) {
                 final boolean isCamera;
-                if (data.getData() == null) {
+                if (data == null) {
                     isCamera = true;
                 } else {
                     isCamera = MediaStore.ACTION_IMAGE_CAPTURE.equals(data.getAction());

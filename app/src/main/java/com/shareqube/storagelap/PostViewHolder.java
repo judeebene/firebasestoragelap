@@ -20,10 +20,9 @@ import com.google.firebase.database.ValueEventListener;
 public class PostViewHolder extends RecyclerView.ViewHolder {
     private final View mView;
     private PostClickListener mListener;
-    public DatabaseReference mPostRef;
-    public ValueEventListener mPostListener;
 
-    public enum LikeStatus { LIKED, NOT_LIKED }
+
+
     private final ImageView mLikeIcon;
     private static final int POST_TEXT_MAX_LINES = 6;
     private ImageView mPhotoView;
@@ -32,8 +31,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     private TextView mPostTextView;
     private TextView mTimestampView;
     private TextView mNumLikesView;
-    public String mPostKey;
-    public ValueEventListener mLikeListener;
+
 
     public PostViewHolder(View itemView) {
         super(itemView);
@@ -50,7 +48,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         mLikeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.toggleLike();
+
             }
         });
     }
@@ -115,19 +113,13 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         mTimestampView.setText(timestamp);
     }
 
-    public void setNumLikes(long numLikes) {
-        String suffix = numLikes == 1 ? " like" : " likes";
-        mNumLikesView.setText(numLikes + suffix);
-    }
+
 
     public void setPostClickListener(PostClickListener listener) {
         mListener = listener;
     }
 
-    public void setLikeStatus(LikeStatus status, Context context) {
-        mLikeIcon.setImageDrawable(ContextCompat.getDrawable(context,
-                status == LikeStatus.LIKED ? R.drawable.heart_full : R.drawable.heart_empty));
-    }
+
 
 
     public interface PostClickListener {

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">storagelap</string>
-    <string name="explore_button_text">Discovered and Post Pix</string>
+    <string name="explore_button_text">Discover and Post Pix</string>
     <string name="welcome_screen_text">Welcome to Firebase Storage Lab</string>
     <string name="title_activity_new_post">NewPost</string>
     <string name="error_required_field">Required</string>
