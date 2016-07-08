@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "410931266092",
+    "firebase_url": "https://storagelap-ef532.firebaseio.com",
+    "project_id": "storagelap-ef532",
+    "storage_bucket": "storagelap-ef532.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410931266092:android:ddf73a0b35fc9304",
+        "android_client_info": {
+          "package_name": "com.shareqube.storagelap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410931266092-hfq2q5vrpr5lhj2u72t6t7g051eul718.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shareqube.storagelap",
+            "certificate_hash": "6FB32C9C05694797331DD830DA0918FF9B8622B5"
+          }
+        },
+        {
+          "client_id": "410931266092-c5m5dv6ps2m99hm0v523vdq4k92ecvjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu71ksJWWHkoY7xsMpPVI3aYvUce_7b_U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410931266092-c5m5dv6ps2m99hm0v523vdq4k92ecvjb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
